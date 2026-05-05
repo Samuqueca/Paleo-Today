@@ -1,0 +1,18 @@
+/* =========================================================
+   FOOTER.CSS
+
+   Rodapé do site.
+========================================================= */
+
+.site-footer {
+  background-color: var(--color-primary);
+  color: white;
+  text-align: center;
+  padding: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.site-footer p + p {
+  margin-top: var(--space-xs);
+  color: #f5dfc0;
+}

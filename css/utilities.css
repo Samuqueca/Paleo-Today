@@ -1,0 +1,28 @@
+/* =========================================================
+   UTILITIES.CSS
+
+   Ajustes auxiliares de acessibilidade, modo escuro e movimento.
+========================================================= */
+
+/* Modo escuro automático */
+@media (prefers-color-scheme: dark) {
+  .site-header,
+  .site-footer {
+    background: linear-gradient(135deg, #3a2415, #18362f);
+  }
+
+  .nav-menu a {
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* Redução de movimento para usuários que preferem menos animações */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  a {
+    transition: none;
+  }
+}

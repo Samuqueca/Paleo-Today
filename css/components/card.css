@@ -1,0 +1,168 @@
+/* =========================================================
+   CARD.CSS
+
+   Cards de notícias, comentários e fórum.
+========================================================= */
+
+/* Grid de notícias */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+/* Card individual de notícia */
+.news-card {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.news-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: var(--space-md);
+}
+
+/* Etiqueta do tipo de notícia */
+.tag {
+  display: inline-block;
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  margin-bottom: var(--space-xs);
+}
+
+.news-card h3,
+.forum-card h3,
+.comment strong {
+  color: var(--color-secondary);
+}
+
+.news-card h3 {
+  font-size: var(--fs-h3);
+  margin-bottom: var(--space-xs);
+  line-height: 1.35;
+}
+
+.news-card p {
+  color: var(--color-muted);
+  line-height: 1.55;
+}
+
+/* Botões */
+.button,
+.forum-card a {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+}
+
+.button:hover,
+.button:focus,
+.forum-card a:hover,
+.forum-card a:focus {
+  background-color: var(--color-accent);
+}
+
+/* Comentários */
+.comments-area {
+  margin-top: var(--space-lg);
+}
+
+.comment {
+  padding: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.comment-header span {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+/* Fórum */
+.forum-section {
+  max-width: 1200px;
+  margin: var(--space-md) auto;
+  padding: var(--space-md);
+}
+
+.forum-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.forum-card {
+  padding: var(--space-md);
+}
+
+.forum-icon {
+  font-size: 2rem;
+  display: inline-block;
+  margin-bottom: var(--space-xs);
+}
+
+.forum-card p {
+  color: var(--color-muted);
+}
+
+/* =========================================================
+   TABLET - A PARTIR DE 768PX
+========================================================= */
+@media (min-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .forum-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card-content {
+    padding: var(--space-lg);
+  }
+}
+
+/* =========================================================
+   DESKTOP - A PARTIR DE 1024PX
+   Mantém os cards em uma coluna para não espremer o conteúdo.
+========================================================= */
+@media (min-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .card-content {
+    padding: var(--space-lg);
+  }
+}
+
+/* =========================================================
+   TELAS GRANDES - A PARTIR DE 1280PX
+   Em monitores maiores, permite duas colunas com espaço adequado.
+========================================================= */
+@media (min-width: 1400px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}

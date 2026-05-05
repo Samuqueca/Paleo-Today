@@ -1,0 +1,69 @@
+/* =========================================================
+   VARIABLES.CSS
+
+   Contém as variáveis globais do projeto:
+   cores, fontes, espaçamentos, bordas e sombras.
+========================================================= */
+
+:root {
+  /* Paleta de cores inspirada em terra, fósseis e natureza */
+  --color-bg: #f4efe6;
+  --color-surface: #ffffff;
+  --color-primary: #6b3f21;
+  --color-secondary: #2f5d50;
+  --color-accent: #c47f33;
+  --color-text: #2c241c;
+  --color-muted: #6f665c;
+  --color-border: #e4d8c8;
+  --color-success: #107c41;
+
+  /* Tipografia */
+  --font-heading: 'Poppins', system-ui, sans-serif;
+  --font-body: 'Inter', Arial, Helvetica, sans-serif;
+
+  --font-xs: 0.640rem;
+  --font-sm: 0.800rem;
+  --font-base: 1rem;
+  --font-md: 1.250rem;
+  --font-lg: 1.563rem;
+  --font-xl: 1.953rem;
+  --font-2xl: 2.441rem;
+  --font-3xl: 3.052rem;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-loose: 1.8;
+
+  /* Tipografia fluida */
+  --fs-base: clamp(0.875rem, 2vw, 1rem);
+  --fs-h1: clamp(1.8rem, 4vw, 2.8rem);
+  --fs-h2: clamp(1.4rem, 3vw, 2rem);
+  --fs-h3: clamp(1.1rem, 2vw, 1.35rem);
+
+  /* Espaçamentos reutilizáveis */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  /* Bordas e sombras */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Modo escuro automático */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1d1915;
+    --color-surface: #2a241e;
+    --color-text: #f4efe6;
+    --color-muted: #d6c6b4;
+    --color-border: #4a3c30;
+  }
+}

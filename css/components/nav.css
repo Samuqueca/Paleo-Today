@@ -1,0 +1,74 @@
+/* =========================================================
+   NAV.CSS
+
+   Cabeçalho, logo e menu de navegação.
+========================================================= */
+
+.site-header {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  padding: var(--space-md);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+
+  text-align: center;
+}
+
+.logo-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.logo {
+  font-size: 2.8rem;
+  line-height: 1;
+}
+
+.site-header h1 {
+  font-size: var(--fs-h1);
+  line-height: 1.1;
+}
+
+.site-header p {
+  color: #f5dfc0;
+}
+
+.nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xs);
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+  background-color: var(--color-accent);
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .logo-area {
+    flex-direction: row;
+    align-items: center;
+  }
+}
