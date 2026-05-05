@@ -1,0 +1,680 @@
+/* =========================================================
+   PALEO TODAY - STYLE.CSS
+
+   Este arquivo concentra toda a estilização do projeto.
+   O objetivo é manter o HTML limpo e facilitar a manutenção,
+   seguindo as boas práticas de CSS externo.
+========================================================= */
+
+
+/* =========================================================
+   VARIÁVEIS GLOBAIS
+
+   As variáveis facilitam a padronização de cores, tamanhos,
+   espaçamentos e fontes em todo o projeto.
+========================================================= */
+:root {
+    /* Paleta de cores inspirada em terra, fósseis e natureza */
+    --color-bg: #f4efe6;
+    --color-surface: #ffffff;
+    --color-primary: #6b3f21;
+    --color-secondary: #2f5d50;
+    --color-accent: #c47f33;
+    --color-text: #2c241c;
+    --color-muted: #6f665c;
+    --color-border: #e4d8c8;
+  
+    /* Espaçamentos reutilizáveis */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+  
+    /* Tipografia fluida usando clamp para melhorar a responsividade */
+    --fs-base: clamp(0.875rem, 2vw, 1rem);
+    --fs-h1: clamp(1.8rem, 4vw, 2.8rem);
+    --fs-h2: clamp(1.4rem, 3vw, 2rem);
+    --fs-h3: clamp(1.1rem, 2vw, 1.35rem);
+  
+    /* Bordas e sombras */
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.08);
+  }
+  
+  
+  /* =========================================================
+     RESET BÁSICO
+  
+     Remove margens e paddings padrões dos navegadores e
+     melhora o controle sobre o layout.
+  ========================================================= */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  
+  /* Melhora o comportamento de rolagem ao clicar nos links internos */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  
+  /* =========================================================
+     CONFIGURAÇÕES GERAIS DO BODY
+  ========================================================= */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-size: var(--fs-base);
+    line-height: 1.6;
+  }
+  
+  
+  /* Imagens, vídeos e iframes responsivos para evitar overflow horizontal */
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  
+  /* Links recebem transição para melhorar a experiência visual */
+  a {
+    transition: 0.2s ease;
+  }
+  
+  
+  /* Estado de foco para melhorar acessibilidade na navegação por teclado */
+  a:focus {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+  
+  
+  /* =========================================================
+     CABEÇALHO DO SITE
+  ========================================================= */
+  .site-header {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    padding: var(--space-md);
+  
+    /* Mobile first: elementos empilhados em coluna */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+  
+    text-align: center;
+  }
+  
+  
+  /* Área que agrupa o ícone, título e subtítulo */
+  .logo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+  
+  
+  /* Ícone visual do projeto */
+  .logo {
+    font-size: 2.8rem;
+    line-height: 1;
+  }
+  
+  
+  /* Título principal do site */
+  .site-header h1 {
+    font-size: var(--fs-h1);
+    line-height: 1.1;
+  }
+  
+  
+  /* Subtítulo do cabeçalho */
+  .site-header p {
+    color: #f5dfc0;
+  }
+  
+  
+  /* =========================================================
+     MENU DE NAVEGAÇÃO
+  ========================================================= */
+  .nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-xs);
+  }
+  
+  
+  /* Links do menu */
+  .nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem 0.9rem;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  
+  /* Hover e foco dos links do menu */
+  .nav-menu a:hover,
+  .nav-menu a:focus {
+    background-color: var(--color-accent);
+  }
+  
+  
+  /* =========================================================
+     HERO / SEÇÃO DE DESTAQUE
+  ========================================================= */
+  .hero {
+    background:
+      linear-gradient(rgba(47, 93, 80, 0.88), rgba(107, 63, 33, 0.9)),
+      url("https://images.unsplash.com/photo-1605106702734-205df224ecce?auto=format&fit=crop&w=1600&q=80");
+  
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: var(--space-xl) var(--space-sm);
+  }
+  
+  
+  /* Conteúdo interno do hero */
+  .hero-content {
+    max-width: 900px;
+    margin-inline: auto;
+    text-align: center;
+  }
+  
+  
+  /* Pequena etiqueta acima do título */
+  .hero-tag {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.18);
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    margin-bottom: var(--space-sm);
+  }
+  
+  
+  /* Título do hero */
+  .hero h2 {
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    line-height: 1.1;
+    margin-bottom: var(--space-sm);
+  }
+  
+  
+  /* Texto do hero */
+  .hero p {
+    max-width: 700px;
+    margin: 0 auto var(--space-md);
+    color: #f7ead7;
+  }
+  
+  
+  /* Botão principal do hero */
+  .hero-button {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--radius-sm);
+    font-weight: bold;
+  }
+  
+  
+  /* Efeito visual do botão do hero */
+  .hero-button:hover,
+  .hero-button:focus {
+    background-color: #a96523;
+  }
+  
+  
+  /* =========================================================
+     LAYOUT PRINCIPAL
+  
+     Mobile first:
+     No celular, tudo fica em uma única coluna.
+  ========================================================= */
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: var(--space-sm);
+  }
+  
+  
+  /* =========================================================
+     BLOCOS REUTILIZÁVEIS
+  
+     Cards, sidebars e seções usam o mesmo estilo base para
+     criar consistência visual.
+  ========================================================= */
+  .sidebar,
+  .aside,
+  .news-card,
+  .comment,
+  .forum-card,
+  .about-section,
+  .forum-section {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+  }
+  
+  
+  /* Espaçamento interno de blocos laterais */
+  .sidebar,
+  .aside {
+    padding: var(--space-md);
+  }
+  
+  
+  /* Títulos das seções */
+  .sidebar h2,
+  .aside h2,
+  .section-heading h2 {
+    font-size: var(--fs-h2);
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+  }
+  
+  
+  /* Descrição abaixo dos títulos */
+  .section-heading p {
+    color: var(--color-muted);
+    margin-bottom: var(--space-md);
+  }
+  
+  
+  /* =========================================================
+     LISTA DE CATEGORIAS
+  ========================================================= */
+  .category-list {
+    list-style: none;
+  }
+  
+  
+  /* Cada item da lista de categorias */
+  .category-list li {
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  
+  /* Links das categorias */
+  .category-list a {
+    display: block;
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 0.7rem 0;
+  }
+  
+  
+  /* Interação com os links das categorias */
+  .category-list a:hover,
+  .category-list a:focus {
+    color: var(--color-accent);
+    padding-left: 0.4rem;
+  }
+  
+  
+  /* =========================================================
+     GRID DE NOTÍCIAS
+  
+     No mobile, os cards aparecem em uma coluna.
+  ========================================================= */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  
+  /* Card individual de notícia */
+  .news-card {
+    overflow: hidden;
+  }
+  
+  
+  /* Imagem do card */
+  .news-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+  
+  
+  /* Conteúdo textual do card */
+  .card-content {
+    padding: var(--space-md);
+  }
+  
+  
+  /* Etiqueta do tipo de notícia */
+  .tag {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    margin-bottom: var(--space-xs);
+  }
+  
+  
+  /* Título do card */
+  .news-card h3,
+  .forum-card h3,
+  .highlight h3,
+  .comment strong {
+    color: var(--color-secondary);
+  }
+  
+  
+  /* Título das notícias */
+  .news-card h3 {
+    font-size: var(--fs-h3);
+    margin-bottom: var(--space-xs);
+  }
+  
+  
+  /* Texto dos cards */
+  .news-card p {
+    color: var(--color-muted);
+  }
+  
+  
+  /* Botões e links em formato de botão */
+  .button,
+  .forum-card a {
+    display: inline-block;
+    margin-top: var(--space-sm);
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    border-radius: var(--radius-sm);
+    font-weight: bold;
+  }
+  
+  
+  /* Interação dos botões */
+  .button:hover,
+  .button:focus,
+  .forum-card a:hover,
+  .forum-card a:focus {
+    background-color: var(--color-accent);
+  }
+  
+  
+  /* =========================================================
+     ÁREA DE COMENTÁRIOS
+  
+     Simula comentários nas notícias, conforme a proposta do
+     projeto de ter interação e discussão.
+  ========================================================= */
+  .comments-area {
+    margin-top: var(--space-lg);
+  }
+  
+  
+  /* Comentário individual */
+  .comment {
+    padding: var(--space-md);
+    margin-bottom: var(--space-sm);
+  }
+  
+  
+  /* Cabeçalho do comentário */
+  .comment-header {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xs);
+  }
+  
+  
+  /* Data ou tempo do comentário */
+  .comment-header span {
+    color: var(--color-muted);
+    font-size: 0.85rem;
+  }
+  
+  
+/* =========================================================
+   ASIDE DE DESTAQUES
+========================================================= */
+.highlight {
+    border-left: 4px solid var(--color-accent);
+    padding: var(--space-sm);
+    margin-bottom: var(--space-md);
+    background-color: rgba(196, 127, 51, 0.08);
+    border-radius: var(--radius-sm);
+  }
+  
+  /* Título dos destaques */
+  .highlight h3 {
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+  }
+  
+  /* Texto dos destaques */
+  .highlight p {
+    color: var(--color-muted);
+    line-height: 1.45;
+  }
+  
+  
+  /* =========================================================
+     SEÇÃO DO FÓRUM
+  ========================================================= */
+  .forum-section {
+    max-width: 1200px;
+    margin: var(--space-md) auto;
+    padding: var(--space-md);
+  }
+  
+  
+  /* Grid das salas do fórum */
+  .forum-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  
+  /* Card de sala do fórum */
+  .forum-card {
+    padding: var(--space-md);
+  }
+  
+  
+  /* Ícone de cada sala do fórum */
+  .forum-icon {
+    font-size: 2rem;
+    display: inline-block;
+    margin-bottom: var(--space-xs);
+  }
+  
+  
+  /* Texto do fórum */
+  .forum-card p {
+    color: var(--color-muted);
+  }
+  
+  
+  /* =========================================================
+     SEÇÃO SOBRE
+  ========================================================= */
+  .about-section {
+    max-width: 1200px;
+    margin: var(--space-md) auto;
+    padding: var(--space-md);
+  }
+  
+  
+  /* Texto da seção sobre */
+  .about-section p {
+    color: var(--color-muted);
+  }
+  
+  
+  /* =========================================================
+     RODAPÉ
+  ========================================================= */
+  .site-footer {
+    background-color: var(--color-primary);
+    color: white;
+    text-align: center;
+    padding: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+  
+  
+  /* Pequeno espaçamento entre as linhas do rodapé */
+  .site-footer p + p {
+    margin-top: var(--space-xs);
+    color: #f5dfc0;
+  }
+  
+  
+  /* =========================================================
+     TABLET - A PARTIR DE 768PX
+     Aqui o layout começa a aproveitar melhor o espaço horizontal.
+  ========================================================= */
+  @media (min-width: 768px) {
+  
+    /* Cabeçalho deixa de ser empilhado e vira linha */
+    .site-header {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+      padding: var(--space-md) var(--space-lg);
+    }
+  
+    /* Logo e título ficam lado a lado */
+    .logo-area {
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    /* Layout principal ganha duas colunas */
+    .layout {
+      grid-template-columns: 240px 1fr;
+      grid-template-areas:
+        "sidebar content"
+        "sidebar aside";
+      padding: var(--space-md);
+    }
+  
+    /* Define a posição da sidebar */
+    .sidebar {
+      grid-area: sidebar;
+    }
+  
+    /* Define a posição do conteúdo principal */
+    .content {
+      grid-area: content;
+    }
+  
+    /* Define a posição do aside */
+    .aside {
+      grid-area: aside;
+    }
+  
+    /* Notícias passam a ter duas colunas */
+    .cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    /* Fórum também passa a usar múltiplas colunas */
+    .forum-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+
+/* =========================================================
+   DESKTOP - A PARTIR DE 1024PX
+========================================================= */
+@media (min-width: 1024px) {
+
+    /* Layout principal com sidebar, conteúdo e aside mais largo */
+    .layout {
+      grid-template-columns: 220px minmax(0, 1fr) 280px;
+      grid-template-areas: "sidebar content aside";
+      padding: var(--space-lg);
+    }
+  
+    /* Cards de notícia em duas colunas para melhorar a leitura */
+    .cards-grid {
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+    }
+  }
+  
+  /* Ajuste de leitura dos títulos das notícias */
+  .news-card h3 {
+    line-height: 1.35;
+  }
+  
+  /* Ajuste de leitura dos textos das notícias */
+  .news-card p {
+    line-height: 1.55;
+  }
+
+  
+  /* =========================================================
+     MODO ESCURO AUTOMÁTICO
+  
+     Extra útil para melhorar experiência do usuário em sistemas
+     configurados com tema escuro.
+  ========================================================= */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: #1d1915;
+      --color-surface: #2a241e;
+      --color-text: #f4efe6;
+      --color-muted: #d6c6b4;
+      --color-border: #4a3c30;
+    }
+  
+    .site-header,
+    .site-footer {
+      background: linear-gradient(135deg, #3a2415, #18362f);
+    }
+  
+    .nav-menu a {
+      background-color: rgba(255, 255, 255, 0.12);
+    }
+  }
+  
+  
+  /* =========================================================
+     REDUÇÃO DE MOVIMENTO
+  
+     Respeita usuários que configuraram o sistema para reduzir
+     animações e transições.
+  ========================================================= */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  
+    a {
+      transition: none;
+    }
+  }
