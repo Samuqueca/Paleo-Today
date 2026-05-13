@@ -1,0 +1,46 @@
+/* =========================================================
+   BADGE.CSS
+
+   Componente usado para etiquetas, categorias e marcadores.
+   Exemplos:
+   - Descoberta
+   - Pesquisa
+   - Análise
+   - Brasil
+
+   Usa modificadores BEM para variações visuais.
+========================================================= */
+
+/* Estilo base de todas as badges */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: fit-content;
+  
+    padding: 0.3rem 0.65rem;
+    border-radius: var(--radius-full);
+  
+    font-size: var(--font-xs);
+    font-weight: var(--weight-bold);
+    line-height: 1;
+  }
+  
+  /* Badge principal */
+  .badge--primary {
+    background-color: var(--color-primary-100);
+    color: var(--color-primary-700);
+  }
+  
+  /* Badge secundária */
+  .badge--secondary {
+    background-color: var(--color-secondary-100);
+    color: var(--color-secondary-700);
+  }
+  
+  /* Badge de destaque */
+  .badge--accent {
+    background-color: var(--color-accent-100);
+    color: var(--color-accent-700);
+  }

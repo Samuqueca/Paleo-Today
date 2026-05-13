@@ -1,36 +1,47 @@
 /* =========================================================
    BASE.CSS
 
-   Estilos gerais aplicados diretamente em elementos HTML.
+   Estilos gerais aplicados aos elementos HTML.
 ========================================================= */
 
 body {
   min-height: 100vh;
   font-family: var(--font-body);
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-size: var(--fs-base);
-  line-height: 1.6;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  font-size: var(--font-base);
+  line-height: var(--leading-normal);
   -webkit-font-smoothing: antialiased;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--font-heading);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+}
+
+p {
+  color: var(--color-text-secondary);
 }
 
 a {
-  transition: 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
-a:focus {
-  outline: 3px solid var(--color-accent);
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-primary-300);
   outline-offset: 3px;
 }
 
-img,
-video,
-iframe {
+img {
+  max-width: 100%;
   height: auto;
+}
+
+ul[role="list"] {
+  list-style: none;
 }

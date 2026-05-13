@@ -1,7 +1,7 @@
 /* =========================================================
    RESET.CSS
 
-   Reset moderno para padronizar o comportamento dos navegadores.
+   Reset moderno para remover estilos padrões inconsistentes.
 ========================================================= */
 
 *,
@@ -17,6 +17,10 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
 }
 
 img,

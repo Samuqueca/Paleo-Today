@@ -1,18 +1,118 @@
 /* =========================================================
    FOOTER.CSS
 
-   Rodapé do site.
+   Rodapé semântico do projeto.
+   Possui:
+   - área de marca
+   - navegação secundária
+   - links de categorias
+   - copyright
+   - links legais
 ========================================================= */
 
-.site-footer {
-  background-color: var(--color-primary);
-  color: white;
-  text-align: center;
-  padding: var(--space-md);
-  margin-top: var(--space-lg);
+/* Container principal do footer */
+.footer {
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-300);
+  padding: var(--space-16) var(--space-6) var(--space-8);
+  margin-top: var(--space-12);
 }
 
-.site-footer p + p {
-  margin-top: var(--space-xs);
-  color: #f5dfc0;
+/* Limita largura interna do footer */
+.footer__container {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* Grid superior do footer */
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+/* Nome da marca no footer */
+.footer__brand-name {
+  font-family: var(--font-heading);
+  font-size: var(--font-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-gray-50);
+  margin-bottom: var(--space-2);
+}
+
+/* Texto descritivo do footer */
+.footer__tagline {
+  max-width: 420px;
+  color: var(--color-gray-300);
+  line-height: var(--leading-normal);
+}
+
+/* Títulos das navegações do footer */
+.footer__nav-title {
+  font-size: var(--font-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-gray-50);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-4);
+}
+
+/* Lista de links do footer */
+.footer__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  list-style: none;
+}
+
+/* Links do footer */
+.footer__link {
+  color: var(--color-gray-300);
+  text-decoration: none;
+  font-size: var(--font-sm);
+}
+
+/* Interação dos links do footer */
+.footer__link:hover,
+.footer__link:focus-visible {
+  color: var(--color-gray-50);
+}
+
+/* Área inferior do footer */
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+
+  padding-top: var(--space-8);
+  margin-top: var(--space-12);
+  border-top: 1px solid var(--color-gray-700);
+}
+
+/* Texto de copyright */
+.footer__copyright {
+  font-size: var(--font-sm);
+  color: var(--color-gray-300);
+}
+
+/* Links legais */
+.footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+/* =========================================================
+   TABLET / DESKTOP
+========================================================= */
+@media (min-width: 768px) {
+  .footer__grid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

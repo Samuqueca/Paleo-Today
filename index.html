@@ -9,277 +9,402 @@
 
   <meta name="description" content="Paleo Today é uma aplicação web de notícias paleontológicas e fórum de teorias sobre descobertas científicas.">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-
+  <!-- CSS em ordem ITCSS -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components/nav.css">
+
+  <link rel="stylesheet" href="css/components/btn.css">
+  <link rel="stylesheet" href="css/components/badge.css">
+  <link rel="stylesheet" href="css/components/navbar.css">
   <link rel="stylesheet" href="css/components/hero.css">
   <link rel="stylesheet" href="css/components/card.css">
   <link rel="stylesheet" href="css/components/footer.css">
+
   <link rel="stylesheet" href="css/utilities.css">
 </head>
 
 <body>
 
-  <!-- Cabeçalho principal do site -->
-  <header class="site-header">
+  <!-- =========================================================
+       NAVBAR
+       Cabeçalho principal com menu responsivo e hamburger.
+  ========================================================== -->
+  <header class="header">
+    <nav class="navbar" aria-label="Navegação principal">
 
-    <!-- Área de identidade visual do projeto -->
-    <div class="logo-area">
-      <span class="logo" aria-hidden="true">🦖</span>
+      <!-- Marca / logo do projeto -->
+      <a href="#inicio" class="navbar__brand" aria-label="Ir para o início da página">
+        <span class="navbar__logo" aria-hidden="true">🦖</span>
+        <span class="navbar__logo-text">Paleo Today</span>
+      </a>
 
-      <div class="title-area">
-        <h1>Paleo Today</h1>
-        <p>Notícias, descobertas e teorias paleontológicas</p>
-      </div>
-    </div>
+      <!-- Botão hamburger exibido em telas pequenas -->
+      <button
+        class="navbar__toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navbar-menu"
+        aria-label="Abrir menu"
+      >
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
 
-    <!-- Navegação principal do site -->
-    <nav class="nav-menu" aria-label="Menu principal">
-      <a href="#inicio">Início</a>
-      <a href="#noticias">Notícias</a>
-      <a href="#forum">Fórum</a>
-      <a href="#sobre">Sobre</a>
+      <!-- Links principais de navegação -->
+      <ul class="navbar__menu" id="navbar-menu" role="list">
+        <li class="navbar__item">
+          <a href="#inicio" class="navbar__link navbar__link--active" aria-current="page">Início</a>
+        </li>
+
+        <li class="navbar__item">
+          <a href="#noticias" class="navbar__link">Notícias</a>
+        </li>
+
+        <li class="navbar__item">
+          <a href="#forum" class="navbar__link">Fórum</a>
+        </li>
+
+        <li class="navbar__item">
+          <a href="#sobre" class="navbar__link">Sobre</a>
+        </li>
+      </ul>
+
+      <!-- Chamada de ação da navbar -->
+      <a href="#noticias" class="btn btn--primary navbar__cta">Explorar</a>
+
     </nav>
-
   </header>
 
-  <!-- Seção de destaque inicial -->
-  <section class="hero" id="inicio">
-    <div class="hero-content">
-      <span class="hero-tag">Ciência • Fósseis • Comunidade</span>
-
-      <h2>Explore o passado da Terra através das descobertas paleontológicas</h2>
-
-      <p>
-        O Paleo Today reúne notícias, curiosidades e espaços de discussão para quem deseja
-        aprender e compartilhar teorias sobre a vida pré-histórica.
-      </p>
-
-      <a href="#noticias" class="hero-button">Ver notícias</a>
-    </div>
-  </section>
-
   <!-- Conteúdo principal da página -->
-  <main class="layout">
+  <main class="main">
 
-    <!-- Barra lateral com categorias do conteúdo -->
-    <aside class="sidebar" aria-label="Categorias de notícias">
-      <h2>Categorias</h2>
+    <!-- =========================================================
+         HERO
+         Seção inicial de apresentação do site.
+    ========================================================== -->
+    <section class="hero" id="inicio">
+      <div class="hero__content">
+        <span class="badge badge--accent">Ciência • Fósseis • Comunidade</span>
 
-      <ul class="category-list">
-        <li><a href="#">Dinossauros</a></li>
-        <li><a href="#">Fósseis recentes</a></li>
-        <li><a href="#">Mamíferos pré-históricos</a></li>
-        <li><a href="#">Extinções em massa</a></li>
-        <li><a href="#">Paleontologia no Brasil</a></li>
-      </ul>
-    </aside>
+        <h1 class="hero__title">
+          Explore o passado da Terra através das descobertas paleontológicas
+        </h1>
 
-    <!-- Área principal com notícias -->
-    <section class="content" id="noticias">
-      <div class="section-heading">
-        <h2>Últimas notícias</h2>
-        <p>Confira atualizações e descobertas recentes do mundo paleontológico.</p>
-      </div>
+        <p class="hero__description">
+          O Paleo Today reúne notícias, curiosidades e espaços de discussão para quem deseja
+          aprender e compartilhar teorias sobre a vida pré-histórica.
+        </p>
 
-      <!-- Grid responsivo de cards de notícia -->
-      <div class="cards-grid">
-
-        <!-- Notícia 1 -->
-        <article class="news-card">
-          <img
-            src="https://images.unsplash.com/photo-1525877442103-5ddb2089b2bb?auto=format&fit=crop&w=900&q=80"
-            alt="Esqueleto de dinossauro exposto em museu"
-          >
-
-          <div class="card-content">
-            <span class="tag">Descoberta</span>
-
-            <h3>Novo fóssil ajuda a entender predadores do Cretáceo</h3>
-
-            <p>
-              Pesquisadores analisam evidências que podem revelar novos detalhes
-              sobre hábitos de caça e adaptação de grandes predadores pré-históricos.
-            </p>
-
-            <a href="#" class="button">Leia mais</a>
-          </div>
-        </article>
-
-        <!-- Notícia 2 -->
-        <article class="news-card">
-          <img
-            src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=900&q=80"
-            alt="Rocha antiga com textura semelhante a fóssil"
-          >
-
-          <div class="card-content">
-            <span class="tag">Pesquisa</span>
-
-            <h3>Registros fósseis indicam antigas mudanças climáticas</h3>
-
-            <p>
-              Camadas sedimentares ajudam cientistas a compreender períodos de
-              transformação ambiental ocorridos há milhões de anos.
-            </p>
-
-            <a href="#" class="button">Leia mais</a>
-          </div>
-        </article>
-
-        <!-- Notícia 3 -->
-        <article class="news-card">
-          <img
-            src="https://images.unsplash.com/photo-1605106702734-205df224ecce?auto=format&fit=crop&w=900&q=80"
-            alt="Paisagem rochosa em ambiente natural"
-          >
-
-          <div class="card-content">
-            <span class="tag">Análise</span>
-
-            <h3>Novas teorias reacendem debate sobre extinções em massa</h3>
-
-            <p>
-              Especialistas discutem possíveis relações entre vulcanismo, impactos
-              de asteroides e alterações ambientais globais.
-            </p>
-
-            <a href="#" class="button">Leia mais</a>
-          </div>
-        </article>
-
-      </div>
-
-      <!-- Área visual de comentários nas notícias -->
-      <section class="comments-area" aria-labelledby="comentarios-titulo">
-        <div class="section-heading">
-          <h2 id="comentarios-titulo">Comentários em destaque</h2>
-          <p>Simulação de interação da comunidade nas notícias.</p>
+        <div class="hero__actions">
+          <a href="#noticias" class="btn btn--primary">Ver notícias</a>
+          <a href="#forum" class="btn btn--outline">Entrar no fórum</a>
         </div>
-
-        <article class="comment">
-          <div class="comment-header">
-            <strong>Samuel</strong>
-            <span>há 2 horas</span>
-          </div>
-
-          <p>
-            Achei interessante como uma única descoberta pode mudar a interpretação
-            sobre o comportamento de uma espécie inteira.
-          </p>
-        </article>
-
-        <article class="comment">
-          <div class="comment-header">
-            <strong>Geysianne</strong>
-            <span>há 5 horas</span>
-          </div>
-
-          <p>
-            Seria legal criar uma categoria exclusiva para fósseis encontrados no Brasil.
-          </p>
-        </article>
-      </section>
+      </div>
     </section>
 
-    <!-- Aside de destaques e curiosidades -->
-    <aside class="aside" aria-label="Destaques paleontológicos">
-      <h2>Destaques</h2>
+    <!-- =========================================================
+         CATEGORIAS
+         Área com temas principais do projeto.
+    ========================================================== -->
+    <section class="section section--compact" aria-labelledby="categorias-titulo">
+      <div class="section__header">
+        <h2 class="section__title" id="categorias-titulo">Categorias</h2>
+        <p class="section__description">Navegue pelos principais temas do projeto.</p>
+      </div>
 
-      <article class="highlight">
-        <h3>Teoria em alta</h3>
-        <p>Dinossauros poderiam apresentar comportamentos sociais complexos?</p>
-      </article>
+      <div class="category-grid">
+        <a href="#noticias" class="category-card">Dinossauros</a>
+        <a href="#noticias" class="category-card">Fósseis recentes</a>
+        <a href="#noticias" class="category-card">Mamíferos pré-históricos</a>
+        <a href="#noticias" class="category-card">Extinções em massa</a>
+        <a href="#noticias" class="category-card">Paleontologia no Brasil</a>
+      </div>
+    </section>
 
-      <article class="highlight">
-        <h3>Curiosidade</h3>
-        <p>Nem todo animal pré-histórico era dinossauro.</p>
-      </article>
+    <!-- =========================================================
+         NOTÍCIAS
+         Grid de cards com conteúdo paleontológico.
+    ========================================================== -->
+    <section class="section" id="noticias" aria-labelledby="noticias-titulo">
+      <div class="section__header">
+        <h2 class="section__title" id="noticias-titulo">Últimas notícias</h2>
+        <p class="section__description">
+          Confira atualizações, descobertas e análises do mundo paleontológico.
+        </p>
+      </div>
 
-      <article class="highlight">
-        <h3>Debate</h3>
-        <p>O impacto do ambiente na evolução dos grandes répteis.</p>
-      </article>
-    </aside>
+      <div class="cards-grid">
+
+        <!-- Card em destaque -->
+        <article class="card card--featured">
+          <figure class="card__figure">
+            <img
+              src="https://images.unsplash.com/photo-1525877442103-5ddb2089b2bb?auto=format&fit=crop&w=900&q=80"
+              alt="Esqueleto de dinossauro exposto em museu"
+              class="card__img"
+              loading="lazy"
+            >
+          </figure>
+
+          <div class="card__body">
+            <header class="card__header">
+              <span class="badge badge--primary">Descoberta</span>
+            </header>
+
+            <h3 class="card__title">Novo fóssil ajuda a entender predadores do Cretáceo</h3>
+
+            <p class="card__description">
+              Pesquisadores analisam evidências que podem revelar novos detalhes sobre
+              hábitos de caça e adaptação de grandes predadores pré-históricos.
+            </p>
+
+            <footer class="card__footer">
+              <a href="#" class="btn btn--outline">Ver detalhes da descoberta</a>
+            </footer>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <figure class="card__figure">
+            <img
+              src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=900&q=80"
+              alt="Rocha antiga com textura semelhante a fóssil"
+              class="card__img"
+              loading="lazy"
+            >
+          </figure>
+
+          <div class="card__body">
+            <header class="card__header">
+              <span class="badge badge--secondary">Pesquisa</span>
+            </header>
+
+            <h3 class="card__title">Registros fósseis indicam antigas mudanças climáticas</h3>
+
+            <p class="card__description">
+              Camadas sedimentares ajudam cientistas a compreender períodos de transformação
+              ambiental ocorridos há milhões de anos.
+            </p>
+
+            <footer class="card__footer">
+              <a href="#" class="btn btn--outline">Ver detalhes da pesquisa</a>
+            </footer>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <figure class="card__figure">
+            <img
+              src="https://images.unsplash.com/photo-1605106702734-205df224ecce?auto=format&fit=crop&w=900&q=80"
+              alt="Paisagem rochosa em ambiente natural"
+              class="card__img"
+              loading="lazy"
+            >
+          </figure>
+
+          <div class="card__body">
+            <header class="card__header">
+              <span class="badge badge--accent">Análise</span>
+            </header>
+
+            <h3 class="card__title">Novas teorias reacendem debate sobre extinções em massa</h3>
+
+            <p class="card__description">
+              Especialistas discutem possíveis relações entre vulcanismo, impactos de
+              asteroides e alterações ambientais globais.
+            </p>
+
+            <footer class="card__footer">
+              <a href="#" class="btn btn--outline">Ver análise completa</a>
+            </footer>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card">
+          <figure class="card__figure">
+            <img
+              src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=900&q=80"
+              alt="Imagem representando estudo científico e registros naturais"
+              class="card__img"
+              loading="lazy"
+            >
+          </figure>
+
+          <div class="card__body">
+            <header class="card__header">
+              <span class="badge badge--primary">Brasil</span>
+            </header>
+
+            <h3 class="card__title">Paleontologia brasileira ganha destaque em novas pesquisas</h3>
+
+            <p class="card__description">
+              Estudos nacionais reforçam a importância de fósseis encontrados em território
+              brasileiro para compreender a evolução da vida pré-histórica.
+            </p>
+
+            <footer class="card__footer">
+              <a href="#" class="btn btn--outline">Ver detalhes do estudo</a>
+            </footer>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FÓRUM
+         Cards de salas de discussão.
+    ========================================================== -->
+    <section class="section" id="forum" aria-labelledby="forum-titulo">
+      <div class="section__header">
+        <h2 class="section__title" id="forum-titulo">Fórum de teorias</h2>
+        <p class="section__description">
+          Salas de discussão para compartilhar hipóteses, dúvidas e curiosidades paleontológicas.
+        </p>
+      </div>
+
+      <div class="cards-grid cards-grid--forum">
+
+        <article class="card">
+          <div class="card__body">
+            <header class="card__header">
+              <span class="badge badge--primary">🦕 Comportamento</span>
+            </header>
+
+            <h3 class="card__title">Comportamento animal</h3>
+
+            <p class="card__description">
+              Discussões sobre caça, migração, inteligência, territorialidade e vida em grupo.
+            </p>
+
+            <footer class="card__footer">
+              <a href="#" class="btn btn--ghost">Entrar na sala</a>
+            </footer>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__body">
+            <header class="card__header">
+              <span class="badge badge--secondary">🦴 Fósseis</span>
+            </header>
+
+            <h3 class="card__title">Descobertas recentes</h3>
+
+            <p class="card__description">
+              Espaço para debater fósseis, artigos científicos e novas interpretações.
+            </p>
+
+            <footer class="card__footer">
+              <a href="#" class="btn btn--ghost">Entrar na sala</a>
+            </footer>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__body">
+            <header class="card__header">
+              <span class="badge badge--accent">🌋 Extinções</span>
+            </header>
+
+            <h3 class="card__title">Extinções e teorias</h3>
+
+            <p class="card__description">
+              Debate sobre asteroides, vulcanismo, mudanças climáticas e extinções em massa.
+            </p>
+
+            <footer class="card__footer">
+              <a href="#" class="btn btn--ghost">Entrar na sala</a>
+            </footer>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SOBRE
+         Explicação do objetivo acadêmico do projeto.
+    ========================================================== -->
+    <section class="section section--compact" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="section__header">
+        <h2 class="section__title" id="sobre-titulo">Sobre o Paleo Today</h2>
+      </div>
+
+      <p class="section__text">
+        O Paleo Today é uma aplicação web acadêmica desenvolvida para divulgar notícias
+        paleontológicas e representar um ambiente colaborativo de fórum, onde usuários
+        podem discutir descobertas, teorias e curiosidades científicas.
+      </p>
+    </section>
 
   </main>
 
-  <!-- Seção de fórum, alinhada com a proposta prometida no projeto -->
-  <section class="forum-section" id="forum">
-    <div class="section-heading">
-      <h2>Fórum de teorias</h2>
+  <!-- =========================================================
+       FOOTER
+       Rodapé com grid de colunas, links e copyright.
+  ========================================================== -->
+  <footer class="footer">
+    <div class="footer__container">
 
-      <p>
-        Espaço criado para simular salas de discussão, comentários e troca de ideias
-        sobre paleontologia.
-      </p>
-    </div>
+      <div class="footer__grid">
 
-    <!-- Grid com salas do fórum -->
-    <div class="forum-grid">
+        <div class="footer__brand">
+          <p class="footer__brand-name">Paleo Today</p>
+          <p class="footer__tagline">
+            Notícias, teorias e discussões sobre a vida pré-histórica.
+          </p>
+        </div>
 
-      <article class="forum-card">
-        <span class="forum-icon" aria-hidden="true">🦕</span>
-        <h3>Comportamento animal</h3>
+        <nav class="footer__nav" aria-label="Links do projeto">
+          <h4 class="footer__nav-title">Projeto</h4>
 
-        <p>
-          Discussões sobre caça, migração, inteligência, territorialidade e vida em grupo.
+          <ul class="footer__nav-list" role="list">
+            <li><a href="#inicio" class="footer__link">Início</a></li>
+            <li><a href="#noticias" class="footer__link">Notícias</a></li>
+            <li><a href="#forum" class="footer__link">Fórum</a></li>
+            <li><a href="#sobre" class="footer__link">Sobre</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__nav" aria-label="Categorias paleontológicas">
+          <h4 class="footer__nav-title">Categorias</h4>
+
+          <ul class="footer__nav-list" role="list">
+            <li><a href="#noticias" class="footer__link">Dinossauros</a></li>
+            <li><a href="#noticias" class="footer__link">Fósseis</a></li>
+            <li><a href="#noticias" class="footer__link">Extinções</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          &copy; <span id="footer-year"></span> Paleo Today. Projeto acadêmico de Aplicações para Internet.
         </p>
 
-        <a href="#">Entrar na sala</a>
-      </article>
-
-      <article class="forum-card">
-        <span class="forum-icon" aria-hidden="true">🦴</span>
-        <h3>Descobertas recentes</h3>
-
-        <p>
-          Espaço para debater fósseis, artigos científicos e novas interpretações.
-        </p>
-
-        <a href="#">Entrar na sala</a>
-      </article>
-
-      <article class="forum-card">
-        <span class="forum-icon" aria-hidden="true">🌋</span>
-        <h3>Extinções e teorias</h3>
-
-        <p>
-          Debate sobre asteroides, vulcanismo, mudanças climáticas e extinções em massa.
-        </p>
-
-        <a href="#">Entrar na sala</a>
-      </article>
+        <nav class="footer__legal" aria-label="Links legais">
+          <a href="#" class="footer__link">Privacidade</a>
+          <a href="#" class="footer__link">Termos</a>
+        </nav>
+      </div>
 
     </div>
-  </section>
-
-  <!-- Seção sobre o projeto -->
-  <section class="about-section" id="sobre">
-    <div class="section-heading">
-      <h2>Sobre o Paleo Today</h2>
-    </div>
-
-    <p>
-      O Paleo Today é uma aplicação web acadêmica desenvolvida para divulgar notícias
-      paleontológicas e representar um ambiente colaborativo de fórum, onde usuários
-      podem discutir descobertas, teorias e curiosidades científicas.
-    </p>
-  </section>
-
-  <!-- Rodapé do site -->
-  <footer class="site-footer">
-    <p>&copy; 2026 Paleo Today — Projeto acadêmico de Aplicações para Internet.</p>
-    <p>Desenvolvido por Samuel Pontes Madruga e Geysianne Silva dos Santos.</p>
   </footer>
 
+  <!-- JavaScript do menu hamburger e ano automático do footer -->
+  <script src="js/main.js"></script>
 </body>
 </html>

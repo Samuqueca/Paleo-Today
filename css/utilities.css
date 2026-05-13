@@ -1,28 +1,47 @@
 /* =========================================================
    UTILITIES.CSS
 
-   Ajustes auxiliares de acessibilidade, modo escuro e movimento.
+   Classes utilitárias e ajustes globais de acessibilidade.
+   Essa camada fica por último na ordem ITCSS.
 ========================================================= */
 
-/* Modo escuro automático */
-@media (prefers-color-scheme: dark) {
-  .site-header,
-  .site-footer {
-    background: linear-gradient(135deg, #3a2415, #18362f);
-  }
+/* Esconde visualmente, mas mantém acessível para leitores de tela */
+.u-sr-only {
+  position: absolute;
 
-  .nav-menu a {
-    background-color: rgba(255, 255, 255, 0.12);
-  }
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+
+  border: 0;
 }
 
-/* Redução de movimento para usuários que preferem menos animações */
+/* Centralização simples de texto */
+.u-text-center {
+  text-align: center;
+}
+
+/* Remove elemento da tela */
+.u-hidden {
+  display: none;
+}
+
+/* Redução de movimento para acessibilidade */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
-  a {
-    transition: none;
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

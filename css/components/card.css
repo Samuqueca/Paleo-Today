@@ -1,168 +1,123 @@
 /* =========================================================
    CARD.CSS
 
-   Cards de notícias, comentários e fórum.
+   Componente Card do projeto Paleo Today.
+   Usa padrão BEM:
+   - .card
+   - .card__figure
+   - .card__img
+   - .card__body
+   - .card__header
+   - .card__title
+   - .card__description
+   - .card__footer
+
+   Também possui variantes:
+   - .card--featured
+   - .card--horizontal
 ========================================================= */
 
-/* Grid de notícias */
-.cards-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-md);
-}
+/* Container principal do card */
+.card {
+  --card-radius: var(--radius-lg);
+  --card-shadow: var(--shadow-soft);
+  --card-border: 1px solid var(--color-border);
 
-/* Card individual de notícia */
-.news-card {
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--color-bg-primary);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
   overflow: hidden;
-  max-width: 100%;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.news-card img {
+/* Efeito de elevação no hover */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-300);
+}
+
+/* Card em destaque com borda superior */
+.card--featured {
+  border-top: 4px solid var(--color-primary-500);
+}
+
+/* Área da imagem */
+.card__figure {
+  margin: 0;
+}
+
+/* Imagem do card */
+.card__img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 220px;
   object-fit: cover;
 }
 
-.card-content {
-  padding: var(--space-md);
-}
-
-/* Etiqueta do tipo de notícia */
-.tag {
-  display: inline-block;
-  background-color: var(--color-secondary);
-  color: white;
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  margin-bottom: var(--space-xs);
-}
-
-.news-card h3,
-.forum-card h3,
-.comment strong {
-  color: var(--color-secondary);
-}
-
-.news-card h3 {
-  font-size: var(--fs-h3);
-  margin-bottom: var(--space-xs);
-  line-height: 1.35;
-}
-
-.news-card p {
-  color: var(--color-muted);
-  line-height: 1.55;
-}
-
-/* Botões */
-.button,
-.forum-card a {
-  display: inline-block;
-  margin-top: var(--space-sm);
-  background-color: var(--color-primary);
-  color: white;
-  text-decoration: none;
-  padding: 0.7rem 1rem;
-  border-radius: var(--radius-sm);
-  font-weight: bold;
-}
-
-.button:hover,
-.button:focus,
-.forum-card a:hover,
-.forum-card a:focus {
-  background-color: var(--color-accent);
-}
-
-/* Comentários */
-.comments-area {
-  margin-top: var(--space-lg);
-}
-
-.comment {
-  padding: var(--space-md);
-  margin-bottom: var(--space-sm);
-}
-
-.comment-header {
+/* Corpo textual do card */
+.card__body {
   display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--space-4);
+  padding: var(--space-6);
+}
+
+/* Cabeçalho interno do card */
+.card__header {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-xs);
+  gap: var(--space-2);
 }
 
-.comment-header span {
-  color: var(--color-muted);
-  font-size: 0.85rem;
+/* Título do card */
+.card__title {
+  font-size: var(--font-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary-700);
+  line-height: var(--leading-tight);
 }
 
-/* Fórum */
-.forum-section {
-  max-width: 1200px;
-  margin: var(--space-md) auto;
-  padding: var(--space-md);
+/* Descrição do card */
+.card__description {
+  font-size: var(--font-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+  flex: 1;
 }
 
-.forum-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-md);
+/* Rodapé do card */
+.card__footer {
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
 }
 
-.forum-card {
-  padding: var(--space-md);
-}
-
-.forum-icon {
-  font-size: 2rem;
-  display: inline-block;
-  margin-bottom: var(--space-xs);
-}
-
-.forum-card p {
-  color: var(--color-muted);
-}
-
-/* =========================================================
-   TABLET - A PARTIR DE 768PX
-========================================================= */
-@media (min-width: 768px) {
-  .cards-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
+/* Variante horizontal em telas maiores */
+@media (min-width: 900px) {
+  .card--horizontal {
+    flex-direction: row;
   }
 
-  .forum-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .card--horizontal .card__figure {
+    flex: 0 0 40%;
   }
 
-  .card-content {
-    padding: var(--space-lg);
+  .card--horizontal .card__img {
+    height: 100%;
+    min-height: 260px;
   }
 }
 
-/* =========================================================
-   DESKTOP - A PARTIR DE 1024PX
-   Mantém os cards em uma coluna para não espremer o conteúdo.
-========================================================= */
-@media (min-width: 1024px) {
-  .cards-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-  }
-
-  .card-content {
-    padding: var(--space-lg);
-  }
-}
-
-/* =========================================================
-   TELAS GRANDES - A PARTIR DE 1280PX
-   Em monitores maiores, permite duas colunas com espaço adequado.
-========================================================= */
-@media (min-width: 1400px) {
-  .cards-grid {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
+/* Em telas pequenas, todos os cards ficam verticais */
+@media (max-width: 899px) {
+  .card--horizontal {
+    flex-direction: column;
   }
 }

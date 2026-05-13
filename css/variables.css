@@ -1,29 +1,20 @@
 /* =========================================================
    VARIABLES.CSS
 
-   Contém as variáveis globais do projeto:
-   cores, fontes, espaçamentos, bordas e sombras.
+   Design Tokens do projeto Paleo Today.
+   Paleta inspirada em fósseis, museus, rochas e natureza.
 ========================================================= */
 
 :root {
-  /* Paleta de cores inspirada em terra, fósseis e natureza */
-  --color-bg: #f4efe6;
-  --color-surface: #ffffff;
-  --color-primary: #6b3f21;
-  --color-secondary: #2f5d50;
-  --color-accent: #c47f33;
-  --color-text: #2c241c;
-  --color-muted: #6f665c;
-  --color-border: #e4d8c8;
-  --color-success: #107c41;
-
-  /* Tipografia */
-  --font-heading: 'Poppins', system-ui, sans-serif;
-  --font-body: 'Inter', Arial, Helvetica, sans-serif;
+  /* =========================================================
+     TIPOGRAFIA
+  ========================================================= */
+  --font-heading: "Poppins", system-ui, sans-serif;
+  --font-body: "Inter", Arial, Helvetica, sans-serif;
 
   --font-xs: 0.640rem;
   --font-sm: 0.800rem;
-  --font-base: 1rem;
+  --font-base: 1.000rem;
   --font-md: 1.250rem;
   --font-lg: 1.563rem;
   --font-xl: 1.953rem;
@@ -38,32 +29,97 @@
   --leading-normal: 1.5;
   --leading-loose: 1.8;
 
-  /* Tipografia fluida */
-  --fs-base: clamp(0.875rem, 2vw, 1rem);
-  --fs-h1: clamp(1.8rem, 4vw, 2.8rem);
-  --fs-h2: clamp(1.4rem, 3vw, 2rem);
-  --fs-h3: clamp(1.1rem, 2vw, 1.35rem);
+  /* =========================================================
+     PALETA PRINCIPAL
+     Primária: âmbar fóssil
+     Secundária: verde paleontológico
+     Fundo: azul escuro de museu
+  ========================================================= */
 
-  /* Espaçamentos reutilizáveis */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
+  /* Cor primária - âmbar/dourado */
+  --color-primary-100: #fff4df;
+  --color-primary-300: #f3c979;
+  --color-primary-500: #d9912b;
+  --color-primary-700: #a96816;
+  --color-primary-900: #5f3608;
 
-  /* Bordas e sombras */
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.08);
-}
+  /* Cor secundária - verde fóssil */
+  --color-secondary-100: #dff4ec;
+  --color-secondary-300: #8ed6bd;
+  --color-secondary-500: #2f7d63;
+  --color-secondary-700: #205947;
+  --color-secondary-900: #12352a;
 
-/* Modo escuro automático */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #1d1915;
-    --color-surface: #2a241e;
-    --color-text: #f4efe6;
-    --color-muted: #d6c6b4;
-    --color-border: #4a3c30;
-  }
+  /* Cor de destaque - terracota */
+  --color-accent-100: #ffe8dc;
+  --color-accent-300: #f4ad89;
+  --color-accent-500: #d96f32;
+  --color-accent-700: #a84b1d;
+  --color-accent-900: #5f230d;
+
+  /* Cores neutras */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-300: #d1d5db;
+  --color-gray-500: #6b7280;
+  --color-gray-700: #374151;
+  --color-gray-900: #111827;
+
+  /* Cores semânticas */
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-danger: #dc2626;
+  --color-info: #0284c7;
+
+  /* =========================================================
+     CORES DE INTERFACE
+  ========================================================= */
+
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+
+  --color-bg-primary: #1e293b;
+  --color-bg-secondary: #0f172a;
+
+  --color-border: #334155;
+
+  /* Compatibilidade com CSS anterior */
+  --color-bg: var(--color-bg-secondary);
+  --color-surface: var(--color-bg-primary);
+  --color-primary: var(--color-primary-500);
+  --color-secondary: var(--color-secondary-500);
+  --color-accent: var(--color-accent-500);
+  --color-text: var(--color-text-primary);
+  --color-muted: var(--color-text-secondary);
+
+  /* =========================================================
+     ESPAÇAMENTOS
+  ========================================================= */
+
+  --space-1: 0.25rem;
+  --space-2: 0.50rem;
+  --space-4: 1.00rem;
+  --space-6: 1.50rem;
+  --space-8: 2.00rem;
+  --space-12: 3.00rem;
+  --space-16: 4.00rem;
+
+  /* Compatibilidade com CSS anterior */
+  --space-xs: var(--space-2);
+  --space-sm: var(--space-4);
+  --space-md: var(--space-6);
+  --space-lg: var(--space-8);
+  --space-xl: var(--space-12);
+
+  /* =========================================================
+     BORDAS E SOMBRAS
+  ========================================================= */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+
+  --shadow-soft: 0 6px 18px rgba(0, 0, 0, 0.18);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.28);
 }
