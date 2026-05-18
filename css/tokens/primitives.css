@@ -1,0 +1,53 @@
+/* =========================================================
+   PRIMITIVES.CSS
+
+   Tokens primitivos do projeto Paleo Today.
+
+   Convenção adotada:
+   - Tokens com prefixo --_ são valores internos.
+   - Eles representam valores brutos: cores, sombras e escalas base.
+   - Componentes NÃO devem usar estes tokens diretamente.
+   - Os componentes devem consumir tokens semânticos.
+========================================================= */
+
+:root {
+  /* Paleta âmbar / fóssil */
+  --_amber-100: #fff4df;
+  --_amber-300: #f3c979;
+  --_amber-500: #d9912b;
+  --_amber-700: #a96816;
+  --_amber-900: #5f3608;
+
+  /* Paleta verde paleontológico */
+  --_green-100: #dff4ec;
+  --_green-300: #8ed6bd;
+  --_green-500: #2f7d63;
+  --_green-700: #205947;
+  --_green-900: #12352a;
+
+  /* Paleta terracota */
+  --_terracotta-100: #ffe8dc;
+  --_terracotta-300: #f4ad89;
+  --_terracotta-500: #d96f32;
+  --_terracotta-700: #a84b1d;
+  --_terracotta-900: #5f230d;
+
+  /* Neutros */
+  --_neutral-50: #f8fafc;
+  --_neutral-100: #f1f5f9;
+  --_neutral-300: #cbd5e1;
+  --_neutral-500: #64748b;
+  --_neutral-700: #334155;
+  --_neutral-800: #1e293b;
+  --_neutral-900: #0f172a;
+
+  /* Cores de feedback */
+  --_success-500: #16a34a;
+  --_warning-500: #f59e0b;
+  --_danger-500: #dc2626;
+  --_info-500: #0284c7;
+
+  /* Sombras primitivas */
+  --_shadow-soft: 0 6px 18px rgba(0, 0, 0, 0.18);
+  --_shadow-md: 0 12px 32px rgba(0, 0, 0, 0.28);
+}

@@ -1,0 +1,99 @@
+/* =========================================================
+   SEMANTIC.CSS
+
+   Tokens semânticos do projeto Paleo Today.
+
+   Estes tokens descrevem intenção de uso:
+   - ação principal
+   - texto
+   - fundo
+   - borda
+   - destaque
+   - feedback
+
+   Componentes devem usar estes tokens, e não os primitivos.
+========================================================= */
+
+:root {
+  /* Ações principais */
+  --color-action-primary: var(--_amber-500);
+  --color-action-primary-hover: var(--_amber-700);
+  --color-action-text: var(--_neutral-50);
+
+  /* Texto */
+  --color-text-primary: var(--_neutral-50);
+  --color-text-secondary: var(--_neutral-300);
+  --color-text-muted: var(--_neutral-500);
+
+  /* Fundos e superfícies */
+  --color-bg-page: var(--_neutral-900);
+  --color-bg-surface: var(--_neutral-800);
+  --color-bg-subtle: var(--_neutral-700);
+
+  /* Bordas */
+  --color-border-default: var(--_neutral-700);
+  --color-border-focus: var(--_amber-300);
+
+  /* Marca e destaques */
+  --color-brand-primary: var(--_amber-500);
+  --color-brand-secondary: var(--_green-500);
+  --color-brand-accent: var(--_terracotta-500);
+
+  /* Badges */
+  --color-badge-primary-bg: var(--_amber-100);
+  --color-badge-primary-text: var(--_amber-900);
+
+  --color-badge-secondary-bg: var(--_green-100);
+  --color-badge-secondary-text: var(--_green-900);
+
+  --color-badge-accent-bg: var(--_terracotta-100);
+  --color-badge-accent-text: var(--_terracotta-900);
+
+  /* Feedback */
+  --color-success: var(--_success-500);
+  --color-warning: var(--_warning-500);
+  --color-danger: var(--_danger-500);
+  --color-info: var(--_info-500);
+
+  /* Sombras */
+  --shadow-soft: var(--_shadow-soft);
+  --shadow-md: var(--_shadow-md);
+
+  /* Compatibilidade com arquivos já existentes */
+  --color-primary-100: var(--_amber-100);
+  --color-primary-300: var(--_amber-300);
+  --color-primary-500: var(--_amber-500);
+  --color-primary-700: var(--_amber-700);
+  --color-primary-900: var(--_amber-900);
+
+  --color-secondary-100: var(--_green-100);
+  --color-secondary-300: var(--_green-300);
+  --color-secondary-500: var(--_green-500);
+  --color-secondary-700: var(--_green-700);
+  --color-secondary-900: var(--_green-900);
+
+  --color-accent-100: var(--_terracotta-100);
+  --color-accent-300: var(--_terracotta-300);
+  --color-accent-500: var(--_terracotta-500);
+  --color-accent-700: var(--_terracotta-700);
+  --color-accent-900: var(--_terracotta-900);
+
+  --color-gray-50: var(--_neutral-50);
+  --color-gray-100: var(--_neutral-100);
+  --color-gray-300: var(--_neutral-300);
+  --color-gray-500: var(--_neutral-500);
+  --color-gray-700: var(--_neutral-700);
+  --color-gray-900: var(--_neutral-900);
+
+  --color-bg-primary: var(--color-bg-surface);
+  --color-bg-secondary: var(--color-bg-page);
+  --color-border: var(--color-border-default);
+
+  --color-bg: var(--color-bg-page);
+  --color-surface: var(--color-bg-surface);
+  --color-primary: var(--color-brand-primary);
+  --color-secondary: var(--color-brand-secondary);
+  --color-accent: var(--color-brand-accent);
+  --color-text: var(--color-text-primary);
+  --color-muted: var(--color-text-secondary);
+}

@@ -1,0 +1,62 @@
+/* =========================================================
+   TYPOGRAPHY.CSS
+
+   Tokens de tipografia do projeto Paleo Today.
+   Define famílias, tamanhos, pesos, alturas de linha e bordas.
+========================================================= */
+
+:root {
+  /* Famílias tipográficas */
+  --font-family-heading: "Poppins", system-ui, sans-serif;
+  --font-family-body: "Inter", Arial, Helvetica, sans-serif;
+
+  /* Compatibilidade com CSS anterior */
+  --font-heading: var(--font-family-heading);
+  --font-body: var(--font-family-body);
+
+  /* Tamanhos */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 3rem;
+
+  /* Compatibilidade com CSS anterior */
+  --font-xs: var(--font-size-xs);
+  --font-sm: var(--font-size-sm);
+  --font-base: var(--font-size-base);
+  --font-md: var(--font-size-md);
+  --font-lg: var(--font-size-lg);
+  --font-xl: var(--font-size-xl);
+  --font-2xl: var(--font-size-2xl);
+  --font-3xl: var(--font-size-3xl);
+
+  /* Pesos */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Compatibilidade com CSS anterior */
+  --weight-regular: var(--font-weight-regular);
+  --weight-medium: var(--font-weight-medium);
+  --weight-bold: var(--font-weight-bold);
+
+  /* Alturas de linha */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Compatibilidade com CSS anterior */
+  --leading-tight: var(--line-height-tight);
+  --leading-normal: var(--line-height-normal);
+  --leading-loose: var(--line-height-relaxed);
+
+  /* Raios de borda */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+}
