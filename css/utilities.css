@@ -31,6 +31,82 @@
   display: none;
 }
 
+/* =========================================================
+   FOCO VISÍVEL PARA TECLADO
+
+   Atende à demanda do cliente fictício:
+   navegação por Tab precisa ser visível e funcional.
+========================================================= */
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-action-primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* =========================================================
+   ÁREA DE TOQUE MÍNIMA
+
+   Garante acessibilidade em dispositivos touch.
+   A recomendação prática é manter pelo menos 44x44px.
+========================================================= */
+
+@media (pointer: coarse) {
+  button,
+  .btn,
+  .navbar__link,
+  .footer__link,
+  .category-card {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* =========================================================
+   TELAS MUITO LARGAS / PROJETOR
+
+   Melhora legibilidade em contextos como TV, projetor
+   e monitores grandes.
+========================================================= */
+
+@media (min-width: 1600px) {
+  :root {
+    font-size: clamp(16px, 1.1vw, 20px);
+  }
+}
+
+/* =========================================================
+   IMPRESSÃO
+
+   Remove elementos interativos desnecessários em impressão.
+========================================================= */
+
+@media print {
+  .header,
+  .footer,
+  .navbar__toggle,
+  .hero__actions {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .main {
+    width: 100%;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+  }
+}
+
 /* Redução de movimento para acessibilidade */
 @media (prefers-reduced-motion: reduce) {
   html {
